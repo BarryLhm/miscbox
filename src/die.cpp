@@ -2,11 +2,8 @@
 
 #include <iostream>
 int die(DEATH_TYPE type) {
-	volatile int *nurupo = nullptr;
 	switch (type) {
-	case SEGV:
-		*nurupo = 114514;
-		return -1;
+	case SEGV: { volatile int *nurupo = nullptr; *nurupo = 114514; }
 	default: return -1;
 	}
 	return -1;

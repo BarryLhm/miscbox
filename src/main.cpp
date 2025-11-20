@@ -4,7 +4,6 @@
 
 int main()
 {
-	die(TEST);
 	die(SEGV);
 	std::printf("hello\n");
 }
