@@ -1,0 +1,8 @@
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+#CTestTestfile.cmake
+Makefile
+# Build directories
+bin/
