@@ -6,5 +6,6 @@ add_executable(miscbox)
 target_sources(miscbox
   PRIVATE
     src/main.cpp
+    src/die.cpp
 )
 
