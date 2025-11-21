@@ -1,5 +1,5 @@
-#include <common.h>
-#include "die.h"
+#include <common.hpp>
+#include "die.hpp"
 
 #include <iostream>
 #include <csignal>

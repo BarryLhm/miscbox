@@ -1,5 +1,5 @@
-#include <common.h>
-#include "utils/die/die.h"
+#include <common.hpp>
+#include "utils/die/die.hpp"
 
 #include <iostream>
 
