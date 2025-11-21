@@ -1,9 +1,10 @@
-#include <iostream>
+#include <common.h>
+#include "utils/die/die.h"
 
-#include "die.h"
+#include <iostream>
 
 int main()
 {
-	die(SEGV);
+	die(mbox::utils::die::SEGV, 0);
 	std::printf("hello\n");
 }
