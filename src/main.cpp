@@ -6,7 +6,7 @@
 
 int main(int argc, char* argv[])
 {
-	mbox::parse_args(mbox::from_argcv(argc, argv));
+	auto args = mbox::parse_args(mbox::from_argcv(argc, argv));
 	//die(mbox::utils::die::SEGV, 0);
 	std::printf("hello\n");
 }
