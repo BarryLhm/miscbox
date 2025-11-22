@@ -1,6 +1,9 @@
+#include "common.hpp"
+
 namespace mbox::utils::die {
 	enum DEATH_TYPE {
-		SEGV, RAISE
+		SEGV,
+		RAISE
 	};
 	M_RESULT die(DEATH_TYPE type, int x);
 }

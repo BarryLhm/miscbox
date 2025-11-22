@@ -12,6 +12,6 @@ target_sources(miscbox
     src/utils/die/die.cpp
 )
 target_include_directories(miscbox
-  PUBLIC
-    src/base/
+  PRIVATE
+     src/base/
 )
