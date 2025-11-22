@@ -12,7 +12,7 @@ clean:
   rm -rf build/
 
 format:
-  find src/ -name '*.cpp' -o -name '*.hpp' | xargs clang-format -i
+  find src/ -name '*.cpp' -o -name '*.hpp' | xargs clang-format --verbose -i
 
 inspect-format:
   git diff --no-index .clang-format.webkit .clang-format || :

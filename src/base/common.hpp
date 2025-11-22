@@ -1,7 +1,8 @@
 #pragma once
+#include <cstdint>
 
-enum M_RESULT {
-	R_SUCCESS = 0,
-	R_FAILED = -1,
-	R_INVALID = -2
+enum class M_RESULT : std::int8_t {
+	SUCCESS = 0,
+	FAILED = -1,
+	INVALID = -2
 };

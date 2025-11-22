@@ -1,7 +1,10 @@
+#pragma once
+#include <cstdint>
+
 #include "common.hpp"
 
 namespace mbox::utils::die {
-	enum DEATH_TYPE {
+	enum class DEATH_TYPE : std::uint8_t {
 		SEGV,
 		RAISE
 	};
