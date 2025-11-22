@@ -1,6 +1,9 @@
 #include <vector>
 
-namespace mbox {
-	std::vector<std::string> from_argcv(int argc, char* argv[]);
-	M_RESULT parse_args(std::vector<std::string> args);
-}
+class ArgParser {
+	std::vector<std::vector<std::string>> argm_;
+public:
+	ArgParser(const std::string& progname);
+	const std::vector<std::vector<std::string>>& argm();
+	M_RESULT parse_args(int argc, char* argv[]);
+};

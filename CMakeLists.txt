@@ -11,4 +11,7 @@ target_sources(miscbox
     src/base/args.cpp
     src/utils/die/die.cpp
 )
-
+target_include_directories(miscbox
+  PUBLIC
+    src/base/
+)
