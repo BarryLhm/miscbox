@@ -8,10 +8,20 @@
 
 [[noreturn]] void ArgParser::invalid_arg_(InvalidArg reason, uint pos, std::any info)
 {
-	// std::cerr << arg << " invalid!\n";
+	switch (reason) {
+	case InvalidArg::NO_REASON: std::printf("invalid argument at pos %u\n", pos); break;
+	case InvalidArg::EMPTY_ARG: {
+		std::printf("invalid argument: empty string at pos %u\n", pos);
+		for (uint i = 0; i < pos; ++i) std::cout << ' ' << args_[i];
+		std::cout << " >>> " << args_[pos] << " <<<";
+		for (uint i = pos + 1; i < args_.size(); ++i) std::cout << ' ' << args_[i];
+	}
+	}
 	std::cerr << "invalid argument\n";
 	std::exit(1);
 }
+
+ArgParser::ArgParser(const std::string& progname) : argm_ { { progname } } { }
 
 ArgParser& ArgParser::add_optarg(uint pos, const std::string& arg, uint num)
 {
@@ -22,8 +32,8 @@ ArgParser& ArgParser::add_optarg(uint pos, const std::string& arg, uint num)
 
 const std::vector<std::vector<std::string>>& ArgParser::parse_args(int argc, char* argv[])
 {
-	args_ = std::vector<std::string>(argv + 1, argv + argc);
-	for (uint pos = 0; pos < args_.size(); ++pos) {
+	args_ = std::vector<std::string>(argv, argv + argc);
+	for (uint pos = 1; pos < args_.size(); ++pos) {
 		const auto& arg = args_[pos];
 		if (arg.empty()) invalid_arg_(InvalidArg::EMPTY_ARG, pos, std::any {});
 		if (arg.front() == '-') {

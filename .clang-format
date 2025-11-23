@@ -6,6 +6,7 @@ AllowShortCaseExpressionOnASingleLine: true
 AllowShortCaseLabelsOnASingleLine: true
 AllowShortIfStatementsOnASingleLine: Always
 AllowShortLoopsOnASingleLine: true
+BreakConstructorInitializers: AfterColon
 EmptyLineBeforeAccessModifier: Always
 IndentWidth: 8
 KeepEmptyLines:

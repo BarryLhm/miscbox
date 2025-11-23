@@ -21,7 +21,7 @@ class ArgParser {
 	[[noreturn]] void invalid_arg_(InvalidArg reason, uint pos, std::any info);
 
     public:
-	explicit ArgParser(const std::string& progname) { argm_ = { { progname } }; }
+	explicit ArgParser(const std::string& progname);
 
 	const std::vector<std::string>& args() { return args_; }
 
