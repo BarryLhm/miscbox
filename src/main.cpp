@@ -6,10 +6,10 @@
 
 int main(int argc, char* argv[])
 {
-	auto argm = ArgParser("miscbox")
-			.scanlist_add(0, "--test3", 3)
-			.scanlist_add(0, "--test4", 4)
-			.parse_args(argc, argv);
+	ArgParser parser("miscbox");
+	parser.add_optarg(0, "--test3", 3);
+	parser.add_optarg(0, "--test4", 4);
+	auto argm = parser.parse_args(argc, argv);
 	std::cout << "hello\n";
 	for (auto const& v: argm) {
 		for (auto const& e: v) {

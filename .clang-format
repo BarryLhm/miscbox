@@ -5,6 +5,7 @@ AllowShortBlocksOnASingleLine: true
 AllowShortCaseExpressionOnASingleLine: true
 AllowShortCaseLabelsOnASingleLine: true
 AllowShortIfStatementsOnASingleLine: Always
+AllowShortLoopsOnASingleLine: true
 EmptyLineBeforeAccessModifier: Always
 IndentWidth: 8
 KeepEmptyLines:
