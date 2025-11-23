@@ -5,19 +5,19 @@
 #include "die.hpp"
 
 namespace mbox::utils::die {
-	M_RESULT die(DEATH_TYPE type, int x)
+	MuResult die(DeathType type, int x)
 	{
 		switch (type) {
-		case DEATH_TYPE::SEGV:
-			if (x != 0) return M_RESULT::INVALID;
+		case DeathType::SEGV:
+			if (x != 0) return MuResult::INVALID;
 			{
 				volatile int* nurupo = nullptr;
 				*nurupo = 114514;
 			}
-			return M_RESULT::FAILED;
-		case DEATH_TYPE::RAISE: raise(x);
-		default: return M_RESULT::INVALID;
+			return MuResult::FAILED;
+		case DeathType::RAISE: raise(x);
+		default: return MuResult::INVALID;
 		}
-		return M_RESULT::FAILED;
+		return MuResult::FAILED;
 	}
 }

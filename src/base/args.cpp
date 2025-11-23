@@ -5,24 +5,31 @@
 #include "args.hpp"
 #include "common.hpp"
 
-ArgParser::ArgParser(const std::string& progname)
+[[noreturn]] void ArgParser::invalid_arg_(InvalidArg reason, uint pos)
 {
-	argm_ = { { progname } };
+	//std::cerr << arg << " invalid!\n";
+	std::cerr << "invalid argument\n";
+	std::exit(1);
 }
 
-const std::vector<std::vector<std::string>>& ArgParser::argm() { return argm_; }
-
-M_RESULT ArgParser::parse_args(int argc, char* argv[])
+ArgParser& ArgParser::scanlist_add(uint pos, const std::string& arg, uint num)
 {
-	std::vector<std::string> args(argv + 1, argv + argc);
-	for (int p = 0; p < args.size(); ++p) {
-		const std::string& arg = args[p];
-		if (args.empty()) return M_RESULT::INVALID;
+	if (pos >= scanlist_.size()) scanlist_.resize(pos + 1);
+	scanlist_[pos][arg] = num;
+	return *this;
+}
+
+const std::vector<std::vector<std::string>>& ArgParser::parse_args(int argc, char* argv[])
+{
+	args_ = std::vector<std::string>(argv + 1, argv + argc);
+	for (int pos = 0; pos < args_.size(); ++pos) {
+		const std::string& arg = args_[pos];
+		if (arg.empty()) invalid_arg_(InvalidArg::EMPTY_ARG, pos);
 		if (arg.front() == '-') {
 			argm_.back().push_back(arg);
 		} else {
 			argm_.push_back({ arg });
 		}
 	}
-	return M_RESULT::SUCCESS;
+	return argm_;
 }
