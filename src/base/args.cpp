@@ -11,13 +11,17 @@
 	switch (reason) {
 	case InvalidArg::NO_REASON: std::printf("invalid argument at pos %u\n", pos); break;
 	case InvalidArg::EMPTY_ARG: {
-		std::printf("invalid argument: empty string at pos %u\n", pos);
-		for (uint i = 0; i < pos; ++i) std::cout << ' ' << args_[i];
+		std::cout << "invalid argument: empty string at pos "
+			  << pos << '\n'
+			  << args_[0];
+		for (uint i = 1; i < pos; ++i) std::cout << ' ' << args_[i];
 		std::cout << " >>> " << args_[pos] << " <<<";
 		for (uint i = pos + 1; i < args_.size(); ++i) std::cout << ' ' << args_[i];
+		std::cout << '\n';
+		break;
 	}
+	default: std::cerr << "invalid argument\n";
 	}
-	std::cerr << "invalid argument\n";
 	std::exit(1);
 }
 
