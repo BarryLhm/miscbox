@@ -7,13 +7,14 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 add_executable(miscbox)
 
 target_sources(miscbox
-  PRIVATE
-    src/main.cpp
-    src/base/args.cpp
-    src/utils/die/die.cpp
+    PRIVATE
+	src/main.c
+	src/base/error.c
+	src/base/argparse.c
+	src/utils/die/die.c
 )
 
 target_include_directories(miscbox
-  PRIVATE
-     src/base/
+    PRIVATE
+	src/base/
 )

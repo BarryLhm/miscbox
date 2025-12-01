@@ -12,7 +12,7 @@ clean:
   rm -rf build/
 
 format:
-  find src/ -name '*.cpp' -o -name '*.hpp' | xargs clang-format --verbose -i
+  find src/ -name '*.c' -o -name '*.h' | xargs clang-format --verbose -i
 
 add:
   git add .
