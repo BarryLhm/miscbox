@@ -1,21 +1,20 @@
 default:
-  just --list
+  ./w
 
 build:
-  cmake -G Ninja -S . -B build/
-  cmake --build build/
+  ./w build
 
 run:
-  build/miscbox
+  ./w run
 
 clean:
-  rm -rf build/
+  ./w clean
 
 format:
-  find src/ -name '*.c' -o -name '*.h' | xargs clang-format --verbose -i
+  ./w format
 
 add:
-  git add .
+  ./w add
 
 stat:
-  git diff --cached --stat
+  ./w stat
