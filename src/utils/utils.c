@@ -6,6 +6,7 @@
 
 #include "die/entry.h"
 
+// keep this in alphabetical order
 const util_t utils[] = {
 	{ "die", die_entry },
 };
