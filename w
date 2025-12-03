@@ -13,8 +13,8 @@ cd "$dir/"
 case "$oper" in
 list)	echo build run clean format add stat
 	;;
-build)	cmake -G Ninja -S . -B build/
-	cmake --build build/
+build)	cmake -S . -B build/
+	cmake --build build/ -j "$(nproc)"
 	;;
 run)	build/miscbox "$@"
 	;;
