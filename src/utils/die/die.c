@@ -3,7 +3,12 @@
 #include "common.h"
 #include "die.h"
 
-result_t die(deathtype_t type, int x)
+result_t die_entry(int argc, char* argv[])
+{
+	return die_main(D_NULLPTR, 0);
+}
+
+result_t die_main(deathtype_t type, int x)
 {
 	switch (type) {
 	case D_NULLPTR:

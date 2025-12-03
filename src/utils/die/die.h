@@ -6,4 +6,4 @@ typedef enum {
 	D_RAISE
 } deathtype_t;
 
-result_t die(deathtype_t type, int x);
+result_t die_main(deathtype_t type, int x);
