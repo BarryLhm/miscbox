@@ -1,4 +1,5 @@
 #pragma once
+#include <stddef.h> // for size_t
 
 typedef enum {
 	R_SUCCESS,

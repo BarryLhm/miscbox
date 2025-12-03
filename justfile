@@ -1,6 +1,9 @@
 default:
   ./w
 
+debug:
+  ./w build
+
 build:
   ./w build
 

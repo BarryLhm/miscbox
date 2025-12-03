@@ -13,6 +13,9 @@ cd "$dir/"
 case "$oper" in
 list)	echo build run clean format add stat
 	;;
+debug)	cmake -S . -B build/ -D CMAKE_BUILD_TYPE=Debug
+	cmake --build build/ -j "$(nproc)"
+	;;
 build)	cmake -S . -B build/
 	cmake --build build/ -j "$(nproc)"
 	;;

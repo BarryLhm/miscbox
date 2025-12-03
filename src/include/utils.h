@@ -1,17 +1,15 @@
 #pragma once
 #include "common.h"
-
-typedef enum {
-	U_DIE,
-	U__MAX
-} util_t;
+#include <stddef.h>
 
 typedef result_t (*util_entry_t)(int argc, char* argv[]);
 
-struct util_struct {
-	util_t id;
-	char* name;
-	util_entry_t run;
-};
+typedef struct {
+	const char* name;
+	const util_entry_t run;
+} util_t;
 
-extern struct util_struct utils[U__MAX];
+extern const util_t utils[];
+extern const size_t utilc;
+
+void* util_match(const char* str);
