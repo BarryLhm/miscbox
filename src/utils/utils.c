@@ -4,11 +4,12 @@
 #include "common.h"
 #include "utils.h"
 
-#include "die/entry.h"
+// no need to expose as address stored globally
+result_t die_entry(int argc, char* argv[]);
 
 // keep this in alphabetical order
 const util_t utils[] = {
-	{ "die", die_entry },
+	{ "die", die_entry }
 };
 
 const size_t utilc = (sizeof(utils) / sizeof(util_t));
