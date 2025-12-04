@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
 			error(E_INVALID_ARG, "%s\n", argv[1]);
 			exit(1);
 		}
-		util->run(0, NULL);
+		util->run(argc - 1, &argv[1]);
 	}
 	return 0;
 }

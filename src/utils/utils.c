@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "common.h"
 #include "../utils.h"
+#include "common.h"
 
 // no need to expose as address stored globally
 result_t die_entry(int argc, char* argv[]);

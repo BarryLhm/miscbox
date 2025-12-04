@@ -21,8 +21,7 @@ typedef enum {
 	IA_MISSING_ARG
 } invalid_arg_t;
 
-result_t perr(const char* fmt, ...);
-result_t error(error_t type, const char* fmt, ...);
-
-//[[noreturn]] void invalid_arg(invalid_arg_t reason, uint pos, uint info);
-result_t parse_args(int argc, char* argv[]);
+typedef struct {
+	const char* name;
+	int val;
+} str2enum_t;

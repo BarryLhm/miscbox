@@ -3,12 +3,28 @@
 #include "common.h"
 #include "die.h"
 
-result_t die_entry(int argc, char* argv[])
+// keep both two below in strcmp order
+typedef enum {
+	D_RAISE,
+	D_NULLPTR
+} deathtype_t;
+
+const str2enum_t die_types[] = {
+	{ "raise", D_RAISE },
+	{ "nullptr", D_NULLPTR }
+};
+
+const size_t die_typec = (sizeof(die_types) / sizeof(str2enum_t));
+
+result_t die_main(int argc, char* argv[])
 {
-	return die_main(D_NULLPTR, 0);
+	if (argc > 1) {
+		str2enum(
+		return die_exec(D_NULLPTR, 0);
+	}
 }
 
-result_t die_main(deathtype_t type, int x)
+result_t die_exec(deathtype_t type, int x)
 {
 	switch (type) {
 	case D_NULLPTR:

@@ -9,6 +9,7 @@ add_executable(miscbox)
 target_sources(miscbox
 PRIVATE
 	src/main.c
+	src/misc.c
 	src/error.c
 	src/argparse.c
 	src/utils/utils.c
