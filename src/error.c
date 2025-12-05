@@ -3,6 +3,8 @@
 
 #include "common.h"
 
+#include "error.h"
+
 result_t perr(const char* fmt, ...)
 {
 	va_list ap;

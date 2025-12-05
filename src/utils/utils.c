@@ -5,11 +5,11 @@
 #include "common.h"
 
 // no need to expose as address stored globally
-result_t die_entry(int argc, char* argv[]);
+result_t die_main(int argc, char* argv[]);
 
 // keep this in alphabetical order
 const util_t utils[] = {
-	{ "die", die_entry }
+	{ "die", die_main }
 };
 
 const size_t utilc = (sizeof(utils) / sizeof(util_t));

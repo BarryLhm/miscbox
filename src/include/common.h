@@ -9,19 +9,9 @@ typedef enum {
 	R_NON_FATAL
 } result_t;
 
-typedef enum {
-	E_INVALID_ARG
-} error_t;
-
-typedef enum {
-	IA_NO_REASON,
-	IA_EMPTY_ARG,
-	IA_UNKNOWN_ARG,
-	IA_NEED_VALUE,
-	IA_MISSING_ARG
-} invalid_arg_t;
-
 typedef struct {
 	const char* name;
 	int val;
 } str2enum_t;
+
+int str2enum(const str2enum_t* list, int size, const char* str);

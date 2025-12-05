@@ -3,6 +3,9 @@
 #include <string.h>
 
 #include "common.h"
+
+#include "argparse.h"
+#include "error.h"
 #include "utils.h"
 
 int main(int argc, char* argv[])
