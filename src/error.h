@@ -2,7 +2,7 @@
 #include "common.h"
 
 typedef enum {
-	E_INVALID_ARG
+	E_INVALID_ARG,
 } error_t;
 
 result_t perr(const char* fmt, ...);

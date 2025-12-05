@@ -6,7 +6,7 @@ typedef enum {
 	R_FAILED,
 	R_INVALID_ARG,
 	R_NOT_IMPLEMENTED,
-	R_NON_FATAL
+	R_NON_FATAL,
 } result_t;
 
 typedef struct {
@@ -14,4 +14,4 @@ typedef struct {
 	int val;
 } str2enum_t;
 
-int str2enum(const str2enum_t* list, int size, const char* str);
+int str2enum(const str2enum_t list[], size_t size, const char* str);

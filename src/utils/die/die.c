@@ -1,16 +1,17 @@
 #include <signal.h>
+#include <stdio.h>
 
 #include "common.h"
 
 // keep both two below in strcmp order
 typedef enum {
+	D_NULLPTR,
 	D_RAISE,
-	D_NULLPTR
 } deathtype_t;
 
 const str2enum_t die_types[] = {
+	{ "nullptr", D_NULLPTR },
 	{ "raise", D_RAISE },
-	{ "nullptr", D_NULLPTR }
 };
 
 const size_t die_typec = (sizeof(die_types) / sizeof(str2enum_t));
@@ -32,8 +33,10 @@ result_t die_exec(deathtype_t type, int x)
 
 result_t die_main(int argc, char* argv[])
 {
-	if (argc > 2) {
-		str2enum(die_types, die_typec, argv[1]);
-		return die_exec(D_NULLPTR, 0);
+	if (argc > 1) {
+		deathtype_t type = str2enum(die_types, die_typec, argv[1]);
+		if (type < 0) return R_INVALID_ARG;
+		return die_exec(type, 0);
 	}
+	return R_FAILED;
 }

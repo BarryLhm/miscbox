@@ -8,9 +8,10 @@ AllowShortIfStatementsOnASingleLine: Always
 AllowShortLoopsOnASingleLine: true
 BreakConstructorInitializers: AfterColon
 EmptyLineBeforeAccessModifier: Always
+EnumTrailingComma: Insert
 IndentWidth: 8
 KeepEmptyLines:
-  AtStartOfFile: false
+	AtStartOfFile: false
 NamespaceIndentation: All
 SeparateDefinitionBlocks: Always
 SpaceBeforeRangeBasedForLoopColon: false
