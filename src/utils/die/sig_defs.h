@@ -44,12 +44,9 @@ const str2enum_t die_signals[] = {
 	{ "xcpu", SIGXCPU },
 	{ "xfsz", SIGXFSZ },
 	{ "iot", SIGIOT },
-	{ "emt", SIGEMT },
 	{ "stkflt", SIGSTKFLT },
 	{ "io", SIGIO },
 	{ "pwr", SIGPWR },
-	{ "info", SIGINFO },
-	{ "lost", SIGLOST },
 	{ "winch", SIGWINCH },
 };
 

@@ -11,7 +11,7 @@ set -x
 
 cd "$dir/"
 case "$oper" in
-list)	echo build run clean format add stat
+list)	echo build debug run clean format add stat disable-coredump
 	;;
 debug)	cmake -S . -B build/ -D CMAKE_BUILD_TYPE=Debug
 	cmake --build build/ -j "$(nproc)"
@@ -28,5 +28,8 @@ format)	find src/ -name '*.c' -o -name '*.h' | xargs clang-format --verbose -i
 add)	git add .
 	;;
 stat)	git diff --cached --stat
+	;;
+disable-coredump) :
+	sudo sysctl kernel.core_pattern='|/bin/false'
 	;;
 esac
