@@ -3,27 +3,34 @@
 
 #include "common.h"
 
-#include "../utils.h"
 #include "argparse.h"
 #include "error.h"
+
+typedef result_t (*util_entry_t)(int argc, const char* argv[]);
+
+typedef struct {
+	const char* name;
+	const util_entry_t run;
+	const util_entry_t show_help;
+} util_t;
 
 typedef enum {
 	UO_RUN,
 	UO_HELP,
 } util_oper_t;
 
-// they should exist
+// define list hack
 #define UTIL_DECLARE(name)                                  \
 	result_t name##_main(int argc, const char* argv[]); \
 	result_t name##_help(int argc, const char* argv[]);
-#define UTIL_REGISTER(name) { #name, name##_main, name##_help },
+#include "utils/util_list.h"
+#undef UTIL_DECLARE
 
-UTIL_DECLARE(die)
-
-// keep this in alphabetical order
+#define UTIL_DECLARE(name) { #name, name##_main, name##_help },
 const util_t utils[] = {
-	UTIL_REGISTER(die)
+#include "utils/util_list.h"
 };
+#undef UTIL_DECLARE
 
 const size_t utilc = sizeof utils / sizeof(util_t);
 

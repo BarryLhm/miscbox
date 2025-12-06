@@ -12,7 +12,7 @@ PRIVATE
 	src/misc.c
 	src/error.c
 	src/argparse.c
-	src/utils/utils.c
+	src/utils.c
 	src/utils/die/die.c
 )
 
