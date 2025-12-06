@@ -36,7 +36,6 @@ const str2enum_t die_signals[] = {
 	{ "term", SIGTERM },	 // 15
 	{ "stkflt", SIGSTKFLT }, // 16
 	{ "chld", SIGCHLD },	 // 17
-	{ "cld", SIGCLD },	 // 17
 	{ "cont", SIGCONT },	 // 18
 	{ "stop", SIGSTOP },	 // 19
 	{ "tstp", SIGTSTP },	 // 20
@@ -60,7 +59,6 @@ const str2enum_t die_signals[] = {
 	{ "alrm", SIGALRM },	 // 14
 	{ "bus", SIGBUS },	 // 7
 	{ "chld", SIGCHLD },	 // 17
-	{ "cld", SIGCLD },	 // 17
 	{ "cont", SIGCONT },	 // 18
 	{ "fpe", SIGFPE },	 // 8
 	{ "hup", SIGHUP },	 // 1
