@@ -9,5 +9,7 @@ typedef enum {
 	IA_MISSING_ARG,
 } invalid_arg_t;
 
+extern size_t argparse_offset;
+
 //[[noreturn]] void invalid_arg(invalid_arg_t reason, uint pos, uint info);
 result_t parse_args(int argc, char* argv[]);

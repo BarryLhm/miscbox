@@ -1,8 +1,7 @@
 #pragma once
 #include "common.h"
-#include <stddef.h>
 
-typedef result_t (*util_entry_t)(int argc, char* argv[]);
+typedef result_t (*util_entry_t)(int argc, const char* argv[]);
 
 typedef struct {
 	const char* name;
@@ -12,4 +11,4 @@ typedef struct {
 extern const util_t utils[];
 extern const size_t utilc;
 
-void* util_match(const char* str);
+result_t util_run(const char* name, size_t arg_shift, int argc, const char* argv[]);

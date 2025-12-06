@@ -8,18 +8,11 @@
 #include "error.h"
 #include "utils.h"
 
-int main(int argc, char* argv[])
+int main(int argc, const char* argv[])
 {
 	printf("hello\n");
-	parse_args(argc, argv);
 	if (argc > 1) {
-		util_t* util = util_match(argv[1]);
-		printf("util addr: %p\n", util);
-		if (!util) {
-			error(E_INVALID_ARG, "%s\n", argv[1]);
-			exit(1);
-		}
-		util->run(argc - 1, &argv[1]);
+		util_run(argv[1], 1, argc, argv);
 	}
 	return 0;
 }

@@ -5,6 +5,8 @@
 
 #include "error.h"
 
+const char* error_prog = PROJECT_NAME;
+
 result_t perr(const char* fmt, ...)
 {
 	va_list ap;

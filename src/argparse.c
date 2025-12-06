@@ -6,6 +6,8 @@
 #include "argparse.h"
 #include "error.h"
 
+size_t argparse_offset = 0;
+
 [[noreturn]] void invalid_arg(
     char* args[],
     invalid_arg_t reason,
@@ -24,7 +26,7 @@
 	}
 	default: error(E_INVALID_ARG, "DEFAULT_MESSAGE\n");
 	}
-	exit(1);
+	exit(EXIT_ERROR);
 }
 
 result_t parse_args(int argc, char* argv[])

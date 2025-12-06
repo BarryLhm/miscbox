@@ -1,6 +1,9 @@
 ---
 BasedOnStyle: Webkit
 ##
+AlignTrailingComments:
+  Kind: Always
+  OverEmptyLines: 1
 AllowShortBlocksOnASingleLine: true
 AllowShortCaseExpressionOnASingleLine: true
 AllowShortCaseLabelsOnASingleLine: true
@@ -11,7 +14,7 @@ EmptyLineBeforeAccessModifier: Always
 EnumTrailingComma: Insert
 IndentWidth: 8
 KeepEmptyLines:
-	AtStartOfFile: false
+  AtStartOfFile: false
 NamespaceIndentation: All
 SeparateDefinitionBlocks: Always
 SpaceBeforeRangeBasedForLoopColon: false

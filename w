@@ -32,4 +32,7 @@ stat)	git diff --cached --stat
 disable-coredump) :
 	sudo sysctl kernel.core_pattern='|/bin/false'
 	;;
+*)	echo "$0: $oper: unknown operation"
+	exit 1
+	;;
 esac

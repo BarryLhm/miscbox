@@ -1,18 +1,18 @@
 default:
-	./w
+  ./w
 debug:
-	./w build
+  ./w build
 build:
-	./w build
+  ./w build
 run:
-	./w run
+  ./w run
 clean:
-	./w clean
+  ./w clean
 format:
-	./w format
+  ./w format
 add:
-	./w add
+  ./w add
 stat:
-	./w stat
+  ./w stat
 disable-coredump:
-	./w disable-coredump
+  ./w disable-coredump
