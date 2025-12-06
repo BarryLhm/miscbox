@@ -15,9 +15,7 @@ const str2enum_t die_signals[] = {
 };
 
 #elif defined(__linux__)
-// strcmp order
-const str2enum_t die_signals[] = {
-	/* unsorted original list
+const str2enum_t die_signals_idorder[] = {
 	{ "hup", SIGHUP },	 // 1
 	{ "int", SIGINT },	 // 2
 	{ "quit", SIGQUIT },	 // 3
@@ -51,10 +49,11 @@ const str2enum_t die_signals[] = {
 	{ "poll", SIGPOLL },	 // 29
 	{ "pwr", SIGPWR },	 // 30
 	{ "sys", SIGSYS },	 // 31
-	*/
+};
 
-	// sorted list
-	// generated with `head -END FILE | tail +START | sort >> FILE`
+// sorted list (strcmp order)
+// generated with `head -END FILE | tail +START | sort >> FILE`
+const str2enum_t die_signals[] = {
 	{ "abrt", SIGABRT },	 // 6
 	{ "alrm", SIGALRM },	 // 14
 	{ "bus", SIGBUS },	 // 7

@@ -5,6 +5,7 @@ typedef enum {
 	E_INVALID_ARG,
 	E_NO_UTILITY,
 	E_FAILED,
+	E_INTERNAL,
 } error_t;
 
 extern const char* error_prog;
