@@ -3,6 +3,8 @@
 
 #include "common.h"
 
+#include "sig_defs.h"
+
 // keep both two below in strcmp order
 typedef enum {
 	D_NULLPTR,
