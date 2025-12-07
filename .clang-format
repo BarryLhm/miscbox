@@ -1,10 +1,11 @@
 ---
 BasedOnStyle: Webkit
 ##
+AlignArrayOfStructures: Left
 AlignTrailingComments:
   Kind: Always
   OverEmptyLines: 1
-AllowShortBlocksOnASingleLine: true
+AllowShortBlocksOnASingleLine: Always
 AllowShortCaseExpressionOnASingleLine: true
 AllowShortCaseLabelsOnASingleLine: true
 AllowShortIfStatementsOnASingleLine: Always

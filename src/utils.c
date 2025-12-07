@@ -23,12 +23,12 @@ typedef enum {
 #define UTIL_DECLARE(name)                                  \
 	result_t name##_main(int argc, const char* argv[]); \
 	result_t name##_help(int argc, const char* argv[]);
-#include "utils/util_list.h"
+#include "utils/utils.list"
 #undef UTIL_DECLARE
 
 #define UTIL_DECLARE(name) { #name, name##_main, name##_help },
 const util_t utils[] = {
-#include "utils/util_list.h"
+#include "utils/utils.list"
 };
 #undef UTIL_DECLARE
 

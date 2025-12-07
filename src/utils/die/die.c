@@ -18,7 +18,7 @@ typedef enum {
 
 const str2enum_t die_types[] = {
 	{ "nullptr", D_NULLPTR },
-	{ "raise", D_RAISE },
+	{ "raise",   D_RAISE   },
 };
 
 const size_t die_typec = sizeof die_types / sizeof(str2enum_t);

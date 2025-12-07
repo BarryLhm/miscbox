@@ -14,6 +14,7 @@ PRIVATE
 	src/argparse.c
 	src/utils.c
 	src/utils/die/die.c
+	src/utils/tables/tables.c
 )
 
 target_include_directories(miscbox

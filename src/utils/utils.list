@@ -2,3 +2,4 @@
 
 // only UTIL_DECLARE(name) here!
 UTIL_DECLARE(die)
+UTIL_DECLARE(tables)
