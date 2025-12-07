@@ -3,6 +3,11 @@
 
 #define PROJECT_NAME "miscbox"
 
+#ifdef _WIN32
+#define strcasecmp _stricmp
+#define strncasecmp _strnicmp
+#endif
+
 typedef enum {
 	R_SUCCESS,
 	R_FAILED,

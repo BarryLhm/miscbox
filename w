@@ -2,7 +2,7 @@
 
 set -eu
 
-dir="$( realpath "$0")"
+dir="$(realpath "$0")"
 dir="${dir%/*}"
 oper="${1-list}"
 shift
@@ -31,6 +31,8 @@ stat)	git diff --cached --stat
 	;;
 disable-coredump) :
 	sudo sysctl kernel.core_pattern='|/bin/false'
+	;;
+test)	target=build/miscbox test/run_test
 	;;
 *)	echo "$0: $oper: unknown operation"
 	exit 1

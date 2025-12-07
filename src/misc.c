@@ -3,10 +3,6 @@
 
 #include "common.h"
 
-#ifdef _WIN32
-#define strcasecmp _stricmp
-#endif
-
 int str2enum_cmp(const void* key, const void* elem)
 {
 	return strcmp((const char*)key, ((const str2enum_t*)elem)->name);

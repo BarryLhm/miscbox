@@ -62,7 +62,7 @@ result_t die_main(int argc, char* argv[])
 		signal = strcase2enum(die_signals, die_signalc, argv[2]);
 		if (signal != EN_NOT_FOUND)
 			;
-		else if (strncmp(argv[2], "sig", 3))
+		else if (strncasecmp(argv[2], "sig", 3))
 			errexit(EXIT_ERROR, E_INVALID_ARG, "unknown signame\n");
 		else {
 			signal = strcase2enum(die_signals, die_signalc, argv[2] + 3);
