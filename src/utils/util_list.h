@@ -1,3 +1,4 @@
 // this should only be included by utils.c
 
+// only UTIL_DECLARE(name) here!
 UTIL_DECLARE(die)

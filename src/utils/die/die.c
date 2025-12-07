@@ -59,13 +59,13 @@ result_t die_main(int argc, char* argv[])
 			errexit(EXIT_ERROR, E_FAILED, "I'm not killed!\n");
 		}
 		if (*endptr == '\0') errexit(EXIT_ERROR, E_INVALID_ARG, "there's no signal 0\n");
-		signal = str2enum(die_signals, die_signalc, argv[2]);
+		signal = strcase2enum(die_signals, die_signalc, argv[2]);
 		if (signal != EN_NOT_FOUND)
 			;
 		else if (strncmp(argv[2], "sig", 3))
 			errexit(EXIT_ERROR, E_INVALID_ARG, "unknown signame\n");
 		else {
-			signal = str2enum(die_signals, die_signalc, argv[2] + 3);
+			signal = strcase2enum(die_signals, die_signalc, argv[2] + 3);
 			if (signal == EN_NOT_FOUND) errexit(EXIT_ERROR, E_INVALID_ARG, "unknown signame\n");
 		}
 		raise(signal);

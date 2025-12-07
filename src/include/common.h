@@ -22,3 +22,4 @@ typedef struct {
 } str2enum_t;
 
 int str2enum(const str2enum_t list[], size_t size, const char* str);
+int strcase2enum(const str2enum_t list[], size_t size, const char* str);
