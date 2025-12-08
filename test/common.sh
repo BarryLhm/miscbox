@@ -36,3 +36,6 @@ pass()
 {
 	echo "$prompt [OK] $1 passed test" >&2
 }
+
+echo "$prompt [INFO] testing for platform: $PLATFORM" >&2
+echo "$prompt [INFO] executable: $target"

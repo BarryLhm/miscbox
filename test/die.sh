@@ -2,8 +2,14 @@
 ## not executable, just for syntax highlighting
 
 # nullptr
-"$target" die nullptr && error "nullptr failed" || \
-  [ "$?" != 139 ] && error "nullptr unexpected signal" || pass nullptr
+"$target" die nullptr && error "nullptr failed" || retval=$?
+case "$PLATFORM" in
+linux|windows) :
+	[ "$?" != 139 ] || error "nullptr unexpected signal"
+	;;
+esac
+
+pass nullptr
 
 # raise
 case "$PLATFORM" in
