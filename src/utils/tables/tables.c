@@ -23,12 +23,12 @@ const str2enum_t table_types[] = {
 
 const size_t table_typec = sizeof table_types / sizeof(str2enum_t);
 
-result_t tables_help(int argc, char* argv[])
+result_t tables_help(int argc, const char* argv[])
 {
 	return R_SUCCESS;
 }
 
-result_t tables_main(int argc, char* argv[])
+result_t tables_main(int argc, const char* argv[])
 {
 	if (argc <= 1) errexit(EXIT_ERROR, E_INVALID_ARG, "table type not specified\n");
 	int type = str2enum(table_types, table_typec, argv[1]);

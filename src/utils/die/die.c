@@ -23,12 +23,12 @@ const str2enum_t die_types[] = {
 
 const size_t die_typec = sizeof die_types / sizeof(str2enum_t);
 
-result_t die_help(int argc, char* argv[])
+result_t die_help(int argc, const char* argv[])
 {
 	return R_SUCCESS;
 }
 
-result_t die_main(int argc, char* argv[])
+result_t die_main(int argc, const char* argv[])
 {
 	if (argc <= 1) errexit(EXIT_ERROR, E_INVALID_ARG, "die type not specified\n");
 	int type = str2enum(die_types, die_typec, argv[1]);
