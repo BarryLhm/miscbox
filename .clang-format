@@ -19,7 +19,7 @@ KeepEmptyLines:
 NamespaceIndentation: All
 SeparateDefinitionBlocks: Always
 SpaceBeforeRangeBasedForLoopColon: false
-UseTab: Always
+UseTab: ForIndentation
 ##
 KeepEmptyLinesAtTheStartOfBlocks: false
 InsertNewlineAtEOF: true

@@ -17,7 +17,7 @@ typedef enum {
 } table_t;
 
 const str2enum_t table_types[] = {
-	{ "ascii",	   TBL_ASCII    },
+	{ "ascii",    TBL_ASCII    },
 	{ "elements", TBL_ELEMENTS },
 };
 
